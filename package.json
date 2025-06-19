@@ -1,0 +1,23 @@
+{
+	"name": "@yelay-lite/sdk",
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"version": "0.0.2",
+	"description": "Yelay Lite SDK",
+	"main": "build/src/index.js",
+	"types": "build/src/index.d.ts",
+	"license": "ISC",
+	"dependencies": {
+		"ethers": "6.11.0",
+		"@avalabs/avalanchejs": "^5.0.0",
+		"dotenv": "^16.4.7"
+	},
+	"devDependencies": {
+		"@types/node": "22.10.1",
+		"@typescript-eslint/eslint-plugin": "8.17.0",
+		"@typescript-eslint/parser": "8.17.0",
+		"typescript": "5.6.2"
+	}
+}

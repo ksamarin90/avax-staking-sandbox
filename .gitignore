@@ -1,0 +1,7 @@
+build/*
+node_modules/*
+typechain/*
+pnpm-lock.yaml
+src/debug.ts
+.env
+package-lock.json
