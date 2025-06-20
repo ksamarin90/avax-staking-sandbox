@@ -13,25 +13,23 @@ const main = async () => {
 
 	const context = await Context.getContextFromURI(AVAX_PUBLIC_URL);
 	const txCount = await provider.getTransactionCount(C_CHAIN_ADDRESS);
-	const baseFee = await evmapi.getBaseFee();
+	// const baseFee = await evmapi.getBaseFee();
 	const pAddressBytes = utils.bech32ToBytes(P_CHAIN_ADDRESS);
 
 	const tx = evm.newExportTxFromBaseFee(
 		context,
-		baseFee / BigInt(1e9),
-		BigInt(0.1 * 1e9),
+		1n,
+		BigInt(0.011 * 1e9),
 		context.pBlockchainID,
 		utils.hexToBuffer(C_CHAIN_ADDRESS),
 		[pAddressBytes],
 		BigInt(txCount),
 	);
 
-	console.log('Signing....');
 	await addTxSignatures({
 		unsignedTx: tx,
 		privateKeys: [utils.hexToBuffer(PRIVATE_KEY)],
 	});
-	console.log('Signed');
 
 	const bridgeTx = await evmapi.issueSignedTx(tx.getSignedTx());
 	console.log(bridgeTx.txID);

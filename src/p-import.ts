@@ -8,11 +8,9 @@ const main = async () => {
 	const { context, feeState, pvmApi } = await setupEtnaExample(AVAX_PUBLIC_URL);
 
 	const { utxos } = await pvmApi.getUTXOs({
-		sourceChain: 'P',
+		sourceChain: 'C',
 		addresses: [P_CHAIN_ADDRESS],
 	});
-
-	console.log(utxos);
 
 	const importTx = pvm.newImportTx(
 		{
@@ -24,8 +22,6 @@ const main = async () => {
 		},
 		context,
 	);
-
-	console.log(JSON.stringify(importTx.tx));
 
 	await addTxSignatures({
 		unsignedTx: importTx,

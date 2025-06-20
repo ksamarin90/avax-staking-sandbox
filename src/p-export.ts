@@ -2,7 +2,7 @@ import { addTxSignatures, pvm, TransferableOutput, utils } from '@avalabs/avalan
 import { setupEtnaExample } from './etna-helper';
 import { getEnvVars } from './getEnvVars';
 
-const AMOUNT_TO_EXPORT_AVAX: number = 0.001;
+const AMOUNT_TO_EXPORT_AVAX: number = 0.011;
 
 async function main() {
 	const { AVAX_PUBLIC_URL, P_CHAIN_ADDRESS, PRIVATE_KEY, C_CHAIN_ADDRESS, CORETH_ADDRESS } = getEnvVars();
