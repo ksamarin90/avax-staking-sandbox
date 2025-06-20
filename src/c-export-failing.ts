@@ -6,6 +6,8 @@ import { getEnvVars } from './getEnvVars';
 const main = async () => {
 	const { AVAX_PUBLIC_URL, C_CHAIN_ADDRESS, PRIVATE_KEY, P_CHAIN_ADDRESS } = getEnvVars();
 
+	console.log('User address: ', C_CHAIN_ADDRESS);
+
 	const provider = new JsonRpcProvider(AVAX_PUBLIC_URL + '/ext/bc/C/rpc');
 	const signer = new ethers.Wallet(process.env.PRIVATE_KEY!, provider);
 
